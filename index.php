@@ -59,4 +59,24 @@ class CDProduct extends ShopProduct {
 		return $base;
 	}
 }
+
+class BookProduct extends ShopProduct{
+	private $numPages;
+
+	function __construct($title, $producerMainName, $producerFirstName, $price, $numPages){
+		parent::__construct($title, $producerMainName, $producerFirstName, $price);
+		$this->numPages = $numPages;
+	}
+
+	function getAmountOfPages(){
+		return $this->numPages;
+	}
+
+	function getSummaryLine(){
+		$base = parent::getSummaryLine();
+		$base .= ": Amount of pages - {$this->numPages}";
+
+		return $base;
+	}
+}
 ?>
