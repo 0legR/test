@@ -28,5 +28,16 @@ class ShopProduct{
 	function getPrice(){
 		return $this->price - $this->discount;
 	}
+
+	function getProducer(){
+		return "{$this->producerFirstName} "
+				."{$this->producerMainName}";
+	}
+
+	function getSummaryLine(){
+		$base = "{$this->title} ( {$this->producerMainName}, ";
+		$base .= "{$this->producerFirstName} )";
+		return $base;
+	}
 }
 ?>
