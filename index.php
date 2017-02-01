@@ -40,4 +40,23 @@ class ShopProduct{
 		return $base;
 	}
 }
+
+class CDProduct extends ShopProduct {
+	private $playLength;
+
+	function __construct($title, $producerMainName, $producerFirstName, $price, $playLength){
+		parent::__construct($title, $producerMainName, $producerFirstName, $price);
+		$this->playLength = $playLength;
+	}
+
+	function getPlayLength(){
+		return $this->playLength;
+	}
+
+	function getSummaryLine(){
+		$base = parent::getSummaryLine();
+		$base .= ": Playing time - {$this->playLength}";
+		return $base;
+	}
+}
 ?>
