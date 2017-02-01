@@ -79,4 +79,11 @@ class BookProduct extends ShopProduct{
 		return $base;
 	}
 }
+
+$product1 = new CDProduct("Tayga", "Group", "Agata Kristy", 5.34, 75.45);
+print("A song: {$product1->getSummaryLine()}\n");
+echo '<br>';
+$product2 = new BookProduct("Viy", "Gogol", "Nikolay", 82.45, 389);
+print("Book: {$product2->getSummaryLine()}\n");
+
 ?>
